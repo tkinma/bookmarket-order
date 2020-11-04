@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: apipayurl
 data:
-  url:  http://payment:8088
+  url:  http://payment:8080
