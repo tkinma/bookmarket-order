@@ -27,7 +27,7 @@ spec:
                   key: url
           readinessProbe:
             httpGet:
-              path: '/actuator/health'
+              path: '/orders'
               port: 8080
             initialDelaySeconds: 10
             timeoutSeconds: 2
