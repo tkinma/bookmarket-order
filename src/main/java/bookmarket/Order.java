@@ -16,6 +16,15 @@ public class Order {
     private String status;
     private Long customerId;
 
+    @PrePersist
+    public void onPrePersist(){  //결제이력을 저장한 후 적당한 시간 끌기
+        try {
+            Thread.currentThread().sleep((long) (400 + Math.random() * 220));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     @PostPersist
     public void onPostPersist(){
         Ordered ordered = new Ordered();
@@ -33,7 +42,6 @@ public class Order {
         // mappings goes here
         OrderApplication.applicationContext.getBean(bookmarket.external.PaymentService.class)
             .payReq(payment);
-
 
     }
 
