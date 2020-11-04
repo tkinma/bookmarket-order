@@ -31,14 +31,14 @@ spring:
           destination: bookmarket
           contentType: application/json
 
-feign:
-  hystrix:
-    enabled: true
-
-hystrix:
-  command:
-    default:
-      execution.isolation.thread.timeoutInMilliseconds: 610
+#feign:
+#  hystrix:
+#    enabled: true
+#
+#hystrix:
+#  command:
+#    default:
+#      execution.isolation.thread.timeoutInMilliseconds: 610
 
 logging:
   level:
