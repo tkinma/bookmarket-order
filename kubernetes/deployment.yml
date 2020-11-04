@@ -36,8 +36,8 @@ spec:
             periodSeconds: 5
             failureThreshold: 5
           env:
-            - name: configurl
+            - name: payurl
               valueFrom:
                 configMapKeyRef:
-                  name: apiurl
+                  name: apipayurl
                   key: url
