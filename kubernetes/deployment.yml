@@ -19,6 +19,12 @@ spec:
           image: admin03.azurecr.io/order:latest
           ports:
             - containerPort: 8080
+          env:
+            - name: payurl
+              valueFrom:
+                configMapKeyRef:
+                  name: apipayurl
+                  key: url
           readinessProbe:
             httpGet:
               path: '/actuator/health'
@@ -35,9 +41,4 @@ spec:
             timeoutSeconds: 2
             periodSeconds: 5
             failureThreshold: 5
-          env:
-            - name: payurl
-              valueFrom:
-                configMapKeyRef:
-                  name: apipayurl
-                  key: url
+
