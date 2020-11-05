@@ -78,4 +78,4 @@ spring:
 
 api:
   payment:
-    url: ${payurl}
+    url: http://payment:8080
