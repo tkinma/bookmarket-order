@@ -24,12 +24,21 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
-          group: Order
+          group: order
           destination: bookmarket
           contentType: application/json
         event-out:
           destination: bookmarket
           contentType: application/json
+
+#feign:
+#  hystrix:
+#    enabled: true
+
+#hystrix:
+#  command:
+#    default:
+#      execution.isolation.thread.timeoutInMilliseconds: 610
 
 logging:
   level:
@@ -60,12 +69,13 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
-          group: Order
+          group: order
           destination: bookmarket
           contentType: application/json
         event-out:
           destination: bookmarket
           contentType: application/json
+
 api:
   payment:
-    url: http://Payment:8080
+    url: ${payurl}

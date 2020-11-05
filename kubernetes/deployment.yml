@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: order
-          image: admin03.azurecr.io/order:latest
+          image: admin35.azurecr.io/order:latest
           ports:
             - containerPort: 8080
           env:
