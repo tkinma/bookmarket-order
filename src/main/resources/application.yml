@@ -24,7 +24,7 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
-          group: Order
+          group: order
           destination: bookmarket
           contentType: application/json
         event-out:
@@ -69,7 +69,7 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
-          group: Order
+          group: order
           destination: bookmarket
           contentType: application/json
         event-out:
